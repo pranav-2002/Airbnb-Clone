@@ -1,0 +1,206 @@
+.navbar {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: white;
+  padding: 1rem 0 1rem 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.navbar__left {
+  cursor: pointer;
+}
+
+.navbar__logo {
+  width: 7rem;
+  height: auto;
+  object-fit: contain;
+  object-position: left;
+}
+
+.navbar__searchIcon {
+  height: 1.2rem;
+  color: white;
+  background-color: #ff385c;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.navbar__search > input {
+  outline: none;
+  border: none;
+  padding-left: 1.25rem;
+  flex-grow: 1;
+  width: 16rem;
+}
+
+.navbar__search input::placeholder {
+  color: black;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.navbar__search {
+  display: flex;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  align-items: center;
+  border: 1px solid whitesmoke;
+  border-width: 2px;
+  border-radius: 9999px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all ease-in-out 0.2s;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__globeIcon {
+  height: 1.4rem;
+  margin-left: 1.5rem;
+  margin-right: 2rem;
+  color: #404040;
+}
+
+.navbar__userIcon {
+  height: 2.3rem;
+  margin-left: 0.6rem;
+  color: gray;
+}
+
+.navbar__menuIcon {
+  height: 1.4rem;
+  color: gray;
+}
+
+.navbar__icons {
+  display: flex;
+  align-items: center;
+  border: 2px solid rgba(99, 99, 99, 0.2);
+  border-radius: 9999px;
+  padding: 0.3rem;
+  transition: all ease-in-out 0.2s;
+}
+
+.navbar__right p {
+  font-weight: 600;
+  margin-left: -2.5rem;
+}
+
+.navbar__logoHidden {
+  width: 2rem;
+  object-fit: contain;
+  height: auto;
+  display: none;
+}
+
+.navbar__search:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar__right:hover > P {
+  cursor: pointer;
+}
+
+.navbar__globeIcon:hover {
+  cursor: pointer;
+}
+
+.navbar__icons:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.navbar__calender {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3 / span 3;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+}
+
+.calender__text {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 1rem;
+}
+
+.calender__text h2 {
+  font-size: 1.5rem;
+  flex-grow: 1;
+  font-weight: 600;
+}
+
+.usersIcon {
+  height: 1.25rem;
+}
+
+.number__input {
+  width: 2rem;
+  padding-left: 0.5rem;
+  font-size: 1.125rem;
+  outline: none;
+  color: #ff385c;
+}
+
+.navbar__buttons {
+  display: flex;
+}
+
+.navbar__buttons > button {
+  border: none;
+  outline: none;
+  background: none;
+  flex-grow: 1;
+  color: #ff385c;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1128px) {
+  .navbar__logo {
+    display: none !important;
+  }
+  .navbar__logoHidden {
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    justify-content: space-evenly;
+  }
+  .navbar__search > input {
+    width: 10rem;
+  }
+  .navbar__left {
+    display: initial !important;
+  }
+  .navbar__right {
+    display: none;
+  }
+  .navbar__calender {
+    display: none;
+  }
+
+  .navbar__searchIcon {
+    background-color: white;
+    color: #ff385c;
+    border: none;
+  }
+  .navbar__search > input::placeholder {
+    font-weight: 500;
+  }
+}

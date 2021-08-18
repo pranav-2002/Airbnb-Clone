@@ -1,0 +1,33 @@
+.features {
+  margin-top: 4rem;
+  margin-left: 8rem;
+}
+
+.features__content {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+
+.features__content::-webkit-scrollbar {
+  display: none;
+}
+
+.features > h1 {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .features {
+    margin-left: 1.5rem;
+  }
+  .features > h1 {
+    font-size: 1.5rem;
+  }
+}

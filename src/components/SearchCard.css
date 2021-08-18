@@ -1,0 +1,103 @@
+.searchCard {
+  display: flex;
+  justify-content: flex-start;
+  transition: all ease-in-out 0.2s;
+  padding: 2rem;
+}
+
+.searchCard > img {
+  object-fit: cover;
+  width: 19rem;
+  height: 13rem;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+.icons {
+  height: 1.5rem;
+}
+
+.searchCard__location {
+  display: flex;
+  align-items: center;
+}
+
+.searchCard__price {
+  display: flex;
+  align-items: center;
+}
+
+.searchCard__text {
+  display: grid;
+  row-gap: 0.8rem;
+  margin-left: 2.5rem;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+}
+
+.searchCard__text > h4 {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.searchCard__text > p {
+  line-height: 25px;
+  font-weight: 400;
+  font-size: 0.96rem;
+  color: #737373;
+}
+
+.searchCard__price > p {
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: #ff385c;
+}
+
+.searchCard__location > p {
+  font-weight: 400;
+  flex-grow: 1;
+  color: #737373;
+  font-size: 0.96rem;
+}
+
+.searchCard__text h5 {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #ff385c;
+}
+
+.icons:hover {
+  cursor: pointer;
+  color: #ff385c;
+}
+
+.searchCard:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 900px) {
+  .searchCard {
+    flex-direction: column;
+    align-items: center;
+  }
+  .searchCard:hover {
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .searchCard__text {
+    margin-top: 4rem;
+    margin-left: 0.8rem;
+  }
+  .searchCard__text h4 {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .searchCard {
+    justify-content: center;
+  }
+}

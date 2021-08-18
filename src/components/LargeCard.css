@@ -1,0 +1,36 @@
+.largeCard {
+  margin-top: 1.5rem;
+}
+
+.largeCard img {
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.largeCard > h4 {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+  cursor: pointer;
+}
+
+.largeCard > p {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  color: rgb(34, 34, 34);
+  cursor: pointer;
+}
+
+.largeCard img:hover {
+  transform: scale(1.02);
+}

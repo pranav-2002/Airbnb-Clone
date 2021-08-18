@@ -1,0 +1,41 @@
+.card {
+  margin-top: 1.5rem;
+}
+
+.card__content {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.card__image > img {
+  object-fit: contain;
+  height: 4rem;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.card__text {
+  margin-left: 1rem;
+}
+
+.card__text h5 {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  color: #222222;
+  font-size: 1rem;
+}
+
+.card__text p {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  color: #222222;
+  font-size: 1rem;
+}
+
+.card__content:hover {
+  transform: scale(1.05);
+}

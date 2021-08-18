@@ -1,0 +1,54 @@
+.places {
+  margin-top: 2rem;
+}
+
+.places__content {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+  grid-template-rows: 5rem 5rem;
+}
+
+.places > h1 {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-left: 8rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .places__content {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .places > h1 {
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .places__content {
+    grid-template-columns: auto auto;
+  }
+  .places > h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .places__content {
+    grid-template-columns: auto;
+  }
+  .places > h1 {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .places > h1 {
+    margin-left: 12%;
+  }
+}

@@ -1,0 +1,27 @@
+.featuresCard__image img {
+  object-fit: contain;
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 0.3rem;
+  height: auto;
+  transition: all ease-in-out 0.2s;
+}
+
+.featuresCard__text h4 {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  margin-top: 0.2rem;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.featuresCard__image img:hover {
+  transform: scale(1.02);
+}
+
+@media screen and (max-width: 768px) {
+  .featuresCard__text h4 {
+    font-size: 1rem;
+  }
+}
