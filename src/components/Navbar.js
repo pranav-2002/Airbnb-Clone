@@ -43,11 +43,11 @@ function Navbar() {
     }
   };
 
-  function handleEnter(event) {
+  const handleEnter = (event) => {
     if (event.keyCode === 13 && userInput.length > 0) {
       history.push(`/search/${userInput}`);
     }
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("keyup", handleEnter);
