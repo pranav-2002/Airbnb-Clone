@@ -95,9 +95,3 @@
     font-size: 1.15rem;
   }
 }
-
-@media screen and (min-width: 1500px) {
-  .searchCard {
-    justify-content: center;
-  }
-}

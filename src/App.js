@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import NearbyPlaces from "./components/NearbyPlaces";
 import { Switch, Route } from "react-router-dom";
 import SearchPage from "./components/SearchPage";
+import React from "react";
 
 function App() {
   return (
