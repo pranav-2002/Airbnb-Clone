@@ -13,12 +13,19 @@ import "react-date-range/dist/theme/default.css";
 import { DateRangePicker } from "react-date-range";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { LocationContext } from "./Contexts/LocationContext";
 
 function Navbar() {
   const [userInput, setUserInput] = useState("");
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-  const [noOfGuests, setNoOfGuests] = useState(1);
+  const {
+    startDate,
+    setStartDate,
+    endDate,
+    setEndDate,
+    noOfGuests,
+    setNoOfGuests,
+  } = useContext(LocationContext);
 
   const selectionRange = {
     startDate: startDate,
@@ -40,12 +47,14 @@ function Navbar() {
   const redirect = (e) => {
     if (userInput.length > 0) {
       history.push(`/search/${userInput}`);
+      setUserInput("");
     }
   };
 
   const handleEnter = (event) => {
     if (event.keyCode === 13 && userInput.length > 0) {
       history.push(`/search/${userInput}`);
+      setUserInput("");
     }
   };
 
@@ -54,75 +63,70 @@ function Navbar() {
     return () => document.removeEventListener("keyup", handleEnter);
   });
 
-  const userLocation = { userInput };
-
   return (
-    <myContext.Provider value={userLocation}>
-      <div className="navbar">
-        <div className="navbar__left">
-          <Link to="/">
-            <img
-              src="https://links.papareact.com/qd3"
-              alt="logo"
-              className="navbar__logo"
-            />
-          </Link>
-          <Link to="/">
-            <img
-              src="https://d29fhpw069ctt2.cloudfront.net/icon/image/38593/preview.svg"
-              alt="logo"
-              className="navbar__logoHidden"
-            />
-          </Link>
-        </div>
-        <div className="navbar__search">
-          <input
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            type="text"
-            placeholder="Start your search"
-            onKeyPress={handleEnter}
+    <div className="navbar">
+      <div className="navbar__left">
+        <Link to="/">
+          <img
+            src="https://links.papareact.com/qd3"
+            alt="logo"
+            className="navbar__logo"
           />
-          <SearchIcon className="navbar__searchIcon" onClick={redirect} />
-        </div>
-        <div className="navbar__right">
-          <p>Become a host</p>
-          <GlobeAltIcon className="navbar__globeIcon" />
-          <div className="navbar__icons">
-            <MenuIcon className="navbar__menuIcon" />
-            <UserCircleIcon className="navbar__userIcon" />
-          </div>
-        </div>
-        {userInput && (
-          <div className="navbar__calender">
-            <DateRangePicker
-              ranges={[selectionRange]}
-              minDate={new Date()}
-              rangeColors={["#ff385c"]}
-              onChange={handleSelect}
-              className="dateRange"
-            />
-            <div className="calender__text">
-              <h2>Number of Guests</h2>
-              <UsersIcon className="usersIcon" />
-              <input
-                value={noOfGuests}
-                onChange={(e) => setNoOfGuests(e.target.value)}
-                min={1}
-                type="number"
-                className="number__input"
-              />
-            </div>
-            <div className="navbar__buttons">
-              <button onClick={resetInput}>Cancel</button>
-              <button onClick={redirect}>Search</button>
-            </div>
-          </div>
-        )}
+        </Link>
+        <Link to="/">
+          <img
+            src="https://d29fhpw069ctt2.cloudfront.net/icon/image/38593/preview.svg"
+            alt="logo"
+            className="navbar__logoHidden"
+          />
+        </Link>
       </div>
-    </myContext.Provider>
+      <div className="navbar__search">
+        <input
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
+          type="text"
+          placeholder="Start your search"
+          onKeyPress={handleEnter}
+        />
+        <SearchIcon className="navbar__searchIcon" onClick={redirect} />
+      </div>
+      <div className="navbar__right">
+        <p>Become a host</p>
+        <GlobeAltIcon className="navbar__globeIcon" />
+        <div className="navbar__icons">
+          <MenuIcon className="navbar__menuIcon" />
+          <UserCircleIcon className="navbar__userIcon" />
+        </div>
+      </div>
+      {userInput && (
+        <div className="navbar__calender">
+          <DateRangePicker
+            ranges={[selectionRange]}
+            minDate={new Date()}
+            rangeColors={["#ff385c"]}
+            onChange={handleSelect}
+            className="dateRange"
+          />
+          <div className="calender__text">
+            <h2>Number of Guests</h2>
+            <UsersIcon className="usersIcon" />
+            <input
+              value={noOfGuests}
+              onChange={(e) => setNoOfGuests(e.target.value)}
+              min={1}
+              type="number"
+              className="number__input"
+            />
+          </div>
+          <div className="navbar__buttons">
+            <button onClick={resetInput}>Cancel</button>
+            <button onClick={redirect}>Search</button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
 export default Navbar;
-export const myContext = React.createContext();

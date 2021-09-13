@@ -1,11 +1,9 @@
 .banner {
-  position: relative;
-  height: auto;
-}
-
-.banner > img {
-  object-fit: cover;
-  width: 100%;
+  background-image: url("https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg");
+  height: 600px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .banner__text {
@@ -13,6 +11,7 @@
   top: 50%;
   width: 100%;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .banner__text > p {
@@ -48,16 +47,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .banner__text > p {
-    font-size: 1rem;
-  }
   .banner__text {
     margin-top: -2rem;
   }
-  .banner__text > button {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.8rem;
-    padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+@media screen and (min-width: 1800px) {
+  .banner__text {
+    margin-top: -2rem;
   }
 }
